@@ -66,17 +66,18 @@ Retrieves statistics about a specific tagged entity
 
 ## Solution Design
 
+The approach taken to building a generic tagging JSON API, was to write the simplest code that could work. 
 
-This solution utilises a simple join table that links tags to entities. The use of join table has the added benefit of 
-providing simple way to get the stats for all tags, by using a simple count. 
+For saving tag information relating to entities, this solution utilises a simple join table that links tags to entities. The use of an array column type for tags was a consideration.  
+However as tag usage was a requirement, the use of a join table provided simple way to get the stats for all tags, by using a simple count. 
 
-For the entity management api the  has been removed from the path, as providing the id was enough to identify the entity. 
+Additionally some subtle changes have been made to the entity management api, specifically the removal of the entity type from the path, as providing the id was enough to identify the entity. 
 
 
 ## Limitations
 
 - If a tag exists with a different spelling/case it creates a new tag
-- Stats Endpoint for entity has not been completed - need more information on expected response 
+- Stats Endpoint for entities has not been completed - need more information on expected response 
 - Testing covers just enough to prove solution works.
 
 
