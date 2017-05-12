@@ -6,7 +6,5 @@ RSpec.describe TagCounter do
 
   specify "It counts the tags" do
     expect(TagCounter.new.count).to include({count: 1, tag: tag.name})
-
   end
-
 end
